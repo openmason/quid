@@ -1,0 +1,15 @@
+{
+  "name": "quid",
+  "description": "Query, Update, Insert, Delete - Data structures",
+  "homepage": "https://github.com/openmason/quid",
+  "version": "0.0.1",
+  "author": "el aras <openmason@gmail.com>",
+  "dependencies": {
+  },
+  "devDependencies": [],
+  "keywords": ["quid", "data structures", "bag"],
+  "repository": {"type":"git", "url": "git://github.com/openmason/quid"},
+  "main": "index",
+  "scripts": { "prepublish" : "npm prune" },
+  "engines": { "node":">= 0.8.0" }
+}
