@@ -2,11 +2,14 @@
   "name": "quid",
   "description": "Query, Update, Insert, Delete - Data structures",
   "homepage": "https://github.com/openmason/quid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "el aras <openmason@gmail.com>",
   "dependencies": {
   },
-  "devDependencies": [],
+  "devDependencies": {
+    "mocha"            : ">= 1.8.1",
+    "should"           : ">= 1.2.2"
+  },
   "keywords": ["quid", "data structures", "bag"],
   "repository": {"type":"git", "url": "git://github.com/openmason/quid"},
   "main": "index",
