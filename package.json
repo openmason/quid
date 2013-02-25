@@ -5,6 +5,7 @@
   "version": "0.0.2",
   "author": "el aras <openmason@gmail.com>",
   "dependencies": {
+    "handy"            : ">= 0.0.1"
   },
   "devDependencies": {
     "mocha"            : ">= 1.8.1",
