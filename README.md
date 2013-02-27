@@ -7,8 +7,6 @@
 ### clone
 ### union
 
-
-
 ## References
   * js_cols - lib for datastructures (http://code.google.com/p/jscols/)
 

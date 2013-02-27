@@ -10,15 +10,15 @@ var o3 = {name:'User A', id:1276, addr:'grissly st', city:'dublin'};
 
 bag1.insert(o0);
 bag1.insert(o1);
-bag1.insert(o2);
 
 // add elements another bag
 bag2.insert(o2);
 bag2.insert(o3);
+bag2.insert(o1);
 
 console.log('elements in first bag:');
 console.log(bag1.values());
 console.log('elements in second bag:');
 console.log(bag2.values());
-console.log('elements that are intersecting:');
-console.log(bag1.intersection(bag2).values());
+console.log('elements in both bags:');
+console.log(bag1.union(bag2).values());

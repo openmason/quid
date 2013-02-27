@@ -109,5 +109,53 @@ describe('basic', function() {
     });
   });
 
+  describe('intersection', function() {
+    it('empty set', function(done) {
+      var b1 = new quid();
+      var b2 = new quid();
+      assert.ok(b1.intersection(b2).values().length==0);
+      done();
+    });
+    it('one with elements and another empty set', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a'});
+      b1.insert({b:'b'});
+      var b2 = new quid();
+      assert.ok(b1.intersection(b2).values().length==0);
+      done();
+    });
+    it('one common element', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a'});
+      b1.insert({b:'b'});
+      var b2 = new quid();
+      b2.insert({a:'a'});
+      assert.ok(b1.intersection(b2).values().length==1);
+      done();
+    });
+    it('just a key is common, not value', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a'});
+      b1.insert({b:'b'});
+      var b2 = new quid();
+      b2.insert({a:'a1'});
+      assert.ok(b1.intersection(b2).values().length==0);
+      done();
+    });
+    it('multiple values', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a'});
+      b1.insert({b:'b'});
+      b1.insert({a:'a1'});
+      var b2 = new quid();
+      b2.insert({a:'a'});
+      b2.insert({b:'d'});
+      b2.insert({a:'a1'});
+      var x = b1.intersection(b2);
+      assert.ok(b1.intersection(b2).values().length==2);
+      done();
+    });
+  });
+
 
 });
