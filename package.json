@@ -2,7 +2,7 @@
   "name": "quid",
   "description": "Query, Update, Insert, Delete - Data structures",
   "homepage": "https://github.com/openmason/quid",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "el aras <openmason@gmail.com>",
   "dependencies": {
     "handy"            : ">= 0.0.12"
