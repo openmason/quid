@@ -19,7 +19,7 @@ Following are the core operations
 
    * union(quid) - returns a new quid with union of this and quid (arg)
    * intersection(quid) - returns a new quid with intersecting elements of this and quid (arg)
-   * diff(quid) ??
+   * difference(quid) - returns elements only in this and not in quid (arg)
    
 ### Relational operations
 

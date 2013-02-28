@@ -157,5 +157,62 @@ describe('basic', function() {
     });
   });
 
+  describe('diff', function() {
+    it('empty set', function(done) {
+      var b1 = new quid();
+      var b2 = new quid();
+      assert.ok(b1.difference(b2).values().length==0);
+      done();
+    });
+    it('disjoint bags', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a'});
+      b1.insert({b:'b'});
+      var b2 = new quid();
+      b2.insert({c:'a'});
+      assert.ok(b1.intersection(b2).values().length==0);
+      done();
+    });
+    it('one common element', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a'});
+      b1.insert({b:'b'});
+      var b2 = new quid();
+      b2.insert({a:'a'});
+      b2.insert({a:'a1'});
+      assert.ok(b1.difference(b2).values().length==1);
+      assert.ok(b2.difference(b1).values().length==1);
+      assert.ok(b2.difference(b1).values()!==b1.difference(b2).values());
+      done();
+    });
+    it('same elements in both', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a'});
+      b1.insert({b:'b'});
+      var b2 = new quid();
+      b2.insert({a:'a'});
+      b2.insert({b:'b'});
+      assert.ok(b1.difference(b2).values().length==0);
+      assert.ok(b2.difference(b1).values().length==0);
+      assert.ok(handy.isArrayEqual(b2.difference(b1).values(), b1.difference(b2).values()));
+      done();
+    });
+    it('with duplicate elements', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a'});
+      b1.insert({b:'b'});
+      b1.insert({c:'c'});
+      b1.insert({a:'a'});
+      var b2 = new quid();
+      b2.insert({a:'a'});
+      b2.insert({b:'b'});
+      b2.insert({d:'d'});
+      b2.insert({b:'b'});
+      assert.ok(b1.difference(b2).values().length==2);
+      assert.ok(b2.difference(b1).values().length==2);
+      done();
+    });
+
+  });
 
 });
