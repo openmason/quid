@@ -1,4 +1,4 @@
-# release 0.0.5
+# release 0.0.6
  * added intersection, difference and unit tests for it
  * added union and unit tests for it
  * imported js_cols

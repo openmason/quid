@@ -23,8 +23,8 @@ Following are the core operations
    
 ### Relational operations
 
+   * projection(keys) - returns a new quid with fields passed in keys (array of fields)
    * selection ??
-   * projection ??
    * distinct ??
    * sorting ??
    * grouping ??
