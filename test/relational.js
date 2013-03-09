@@ -57,5 +57,40 @@ describe('relational', function() {
     });
 
   });
+  describe('selection', function() {
+    it('invalid condition', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a', b:'b'});
+      b1.insert({a:'a', b:'b'});
+      b1.insert({b:'b1'});
+      assert.ok(b1.selection([]).values().length==0);
+      done();
+    });
+    it('empty condition', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a', b:'b'});
+      b1.insert({a:'a', b:'b'});
+      b1.insert({b:'b1'});
+      assert.ok(b1.selection(function(elem){}).values().length==0);
+      done();
+    });
+    it('passthru condition', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a', b:'b'});
+      b1.insert({a:'a', b:'b'});
+      b1.insert({b:'b1'});
+      assert.ok(b1.selection(function(elem){ return true;}).values().length==3);
+      done();
+    });
+    it('proper filter condition', function(done) {
+      var b1 = new quid();
+      b1.insert({a:'a', b:'b'});
+      b1.insert({a:'a', b:'b'});
+      b1.insert({b:'b1'});
+      assert.ok(b1.selection(function(elem){ return elem.a!='a';}).values().length==1);
+      done();
+    });
+
+  });
 
 });
